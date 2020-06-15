@@ -9,7 +9,7 @@ resource "aws_instance" "web" {
   ami           = "ami-052c08d70def0ac62"
   instance_type = "t2.micro"
   key_name = "password"
-security_groups = ["allow"]
+  security_groups = ["allow"]
   tags = {
     Name = "HelloWorld"
   }
@@ -20,8 +20,8 @@ security_groups = ["allow"]
 
 
 resource "aws_security_group" "allow_80" {
-  name        = "allow"
-  description = "Allow 80 inbound traffic"
+    name        = "allow"
+    description = "Allow 80 inbound traffic"
   
 
   ingress {
@@ -111,7 +111,7 @@ provisioner "remote-exec" {
     inline = [
       "sudo yum install httpd php git -y",
       "sudo systemctl restart httpd",
-      "sudo systemctl enable htttpd"
+      "sudo systemctl enable httpd"
     ]
 }
 
