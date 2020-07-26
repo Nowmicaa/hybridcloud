@@ -105,7 +105,7 @@ connection {
 
 }
 
-//remote login
+// remote login
 
 provisioner "remote-exec" {
     inline = [
